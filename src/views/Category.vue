@@ -15,13 +15,13 @@
 </template>
 
 <script>
-import axios from "axios";
-import { toast } from "bulma-toast";
+import axios from 'axios';
+import { toast } from 'bulma-toast';
 
-import ProductBox from "@/components/ProductBox";
+import ProductBox from '@/components/ProductBox';
 
 export default {
-  name: "Category",
+  name: 'Category',
   components: {
     ProductBox,
   },
@@ -33,7 +33,7 @@ export default {
     };
   },
   mounted() {
-    this.getcategory();
+    this.getCategory()
   },
   watch: {
     $route(to, from) {
@@ -43,7 +43,7 @@ export default {
     }
   },
   methods: {
-    async getcategory() {
+    async getCategory() {
       const categorySlug = this.$route.params.category_slug;
 
       this.$store.commit("setIsLoading", true);

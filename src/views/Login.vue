@@ -53,7 +53,7 @@ export default {
     },
     methods: {
         async submitForm(){
-            axios.defaults.headers.common['Authorization'] = ""
+            axios.defaults.headers.common["Authorization"] = ""
 
             localStorage.removeItem("token")
 
@@ -64,12 +64,12 @@ export default {
 
             await axios
             .post("api/v1/token/login/", formData)
-            .then(response=> {
+            .then(response => {
                 const token = response.data.auth_token
 
                 this.$store.commit('setToken', token)
 
-                axios.defaults.headers.common["Authorization"] = "Token" + token
+                axios.defaults.headers.common["Authorization"] = "Token " + token
 
                 localStorage.setItem("token", token)
 
@@ -82,8 +82,7 @@ export default {
                     for(const property in error.response.data){
                         this.errors.push(`${property}: ${error.response.data[property]}`) 
                     } 
-                    console.log(JSON.stringify(error.response.data))
-                }else if (error.message){
+                }else{
                     this.errors.push('Something went wrong, Please try again')
                     console.log(JSON.stringify(error))
                 }

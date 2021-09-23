@@ -8,7 +8,7 @@ import Category from '../views/Category.vue'
 import Search from '../views/Search.vue'
 import Cart from '../views/Cart.vue'
 import SignUp from '../views/SignUp.vue'
-import Login from '../views/Login.vue'
+import LogIn from '../views/LogIn.vue'
 import MyAccount from '../views/MyAccount.vue'
 import Checkout from '../views/Checkout.vue'
 import Success from '../views/Success.vue' 
@@ -28,14 +28,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/Sign-up',
+    path: '/sign-up',
     name: 'SignUp',
     component: SignUp
   },
   {
-    path: '/Log-in',
-    name: 'Login',
-    component: Login
+    path: '/log-in',
+    name: 'LogIn',
+    component: LogIn
   },
   {
     path: '/my-account',
@@ -51,7 +51,7 @@ const routes = [
     component: Search
   },
   {
-    path: '/Cart',
+    path: '/cart',
     name: 'Cart',
     component: Cart
   },
@@ -87,7 +87,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next)=> {
   if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated) {
-    next({ name:'Login', query: {to: to.path } });
+    next({ name:'LogIn', query: {to: to.path } });
   } 
   else {
     next()
