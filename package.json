@@ -11,9 +11,12 @@
     "bulma": "^0.9.3",
     "bulma-toast": "^2.3.1",
     "core-js": "^3.6.5",
+    "express": "^4.17.2",
+    "serve-static": "^1.14.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
-    "vuex": "^4.0.0-0"
+    "vuex": "^4.0.0-0",
+    "yarn": "^1.22.17"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
